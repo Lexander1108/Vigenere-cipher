@@ -1,0 +1,22 @@
+{
+  "name": "vigenere-cipher",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lexander1108/Vigenere-cipher.git"
+  },
+  "author": "Alexander Kretov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lexander1108/Vigenere-cipher/issues"
+  },
+  "homepage": "https://github.com/Lexander1108/Vigenere-cipher#readme",
+  "dependencies": {
+    "eslint": "^8.21.0"
+  }
+}
