@@ -7,7 +7,7 @@ const myName = 'KRETOV OLEXANDER VALENTYNOVYCH';
 
 const stretchedCodeWord = codeWord.padEnd(myName.length, codeWord)
 
-function indexReturner (str){
+function indexReturner(str){
     str.split("");
     let result = [];
     for(let i = 0; i < str.length; i++){
@@ -22,7 +22,7 @@ function indexReturner (str){
 
 const codeWordIndexes = indexReturner(stretchedCodeWord);
 
-function cutter (index) {
+function cutter(index) {
     let arr1 = [];
     let arr2 = [];
     for(let i = index; i < 26; i++) {
@@ -34,7 +34,7 @@ function cutter (index) {
     return (arr1.concat(arr2));
 };
 
-function converter (arr){
+function converter(arr){
     let result = [];
     for(let i = 0; i < 26; i++){
         result.push(alphabet[arr[i]]);
@@ -42,7 +42,7 @@ function converter (arr){
     return result;
 };
 
-function arrays (indexes){
+function arrays(indexes){
     let result = [];
     for(let i = 0; i < indexes.length; i++){
         result.push(converter(cutter(indexes[i])));
@@ -52,7 +52,7 @@ function arrays (indexes){
 
 const arrs = arrays(codeWordIndexes);
 
-function code (arrays, textIndexes) {
+function code(arrays, textIndexes) {
     let result = [];
     for (let i = 0; i < textIndexes.length; i++){
         result.push(arrays[i][textIndexes[i]]);
@@ -60,7 +60,7 @@ function code (arrays, textIndexes) {
     return result;
 }
 
-function spaceIndexesReturner (str){
+function spaceIndexesReturner(str){
     let spaces = [];
     for (let i = 0; i < str.length; i++){
         if (str[i] == ' '){
