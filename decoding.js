@@ -20,7 +20,7 @@ function indexReturner(str){
     return result;
 }
 
-const codeWordIndexes = indexReturner(stretchedCodeWord);
+const codeWordIndexes = indexReturner(stretchedCodeWord)
 
 function cutter(index) {
     let arr1 = [];
@@ -50,9 +50,22 @@ function arrays(indexes){
     return result;
 };
 
+const text = 'LZOXPD YPFFKREMB ZBTORUGXSWGML';
+const word = text.split(" ").join('')
+
+for(let i = 0; i < word.length; i++){
+    codeWordIndexes.push(codeWordIndexes[i]);
+}
+
 const arrs = arrays(codeWordIndexes);
 
-const word = 'CQUI'
+function stretchIndexes(array, str){
+    let result = [];
+    for(let i = 0; i < str.length; i++){
+        result.push(array[i])
+    }
+    return result;
+}
 
 function decode(arrays, word){
     word.split("");
@@ -72,7 +85,24 @@ function decode(arrays, word){
     return result.join('');
 }
 
-console.log(decode(arrs, word));
+function spaceIndexesReturner(str){
+    let spaces = [];
+    for (let i = 0; i < str.length; i++){
+        if (str[i] == ' '){
+            spaces.push(str.indexOf(' ', i))
+            }
+    }
+    return spaces;
+}
 
+let spaceIndexes = spaceIndexesReturner(text);
 
+function spaceAdder(spaceIndexes, arr){
+    for (let i = 0; i < spaceIndexes.length; i++){
+        arr.splice(spaceIndexes[i], 0, ' ');
+    }
+    return arr.join('');
+}
 
+console.log(text)
+console.log(spaceAdder(spaceIndexes, decode(arrs, word).split("")));
