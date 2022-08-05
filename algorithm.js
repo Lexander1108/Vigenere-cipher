@@ -1,11 +1,12 @@
 const english = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const alphabet = english.split("");
 
-const codeWord = 'BIKE';
+const codeWord = 'BICYCLE';
 
-const myName = 'BIKE';
+const initialText = 'LZGRQG SMMZYPOIS DCJGYXZVQTANL';
+const word = initialText.split(" ").join('');
 
-const stretchedCodeWord = codeWord.padEnd(myName.length, codeWord)
+const stretchedCodeWord = codeWord.padEnd(initialText.length, codeWord)
 
 function indexReturner(str){
     str.split("");
@@ -20,7 +21,7 @@ function indexReturner(str){
     return result;
 }
 
-const codeWordIndexes = indexReturner(stretchedCodeWord)
+const codeWordIndexes = indexReturner(stretchedCodeWord);
 
 function cutter(index) {
     let arr1 = [];
@@ -50,19 +51,16 @@ function arrays(indexes){
     return result;
 };
 
-const text = 'LZOXPD YPFFKREMB ZBTORUGXSWGML';
-const word = text.split(" ").join('')
-
 for(let i = 0; i < word.length; i++){
     codeWordIndexes.push(codeWordIndexes[i]);
 }
 
 const arrs = arrays(codeWordIndexes);
 
-function stretchIndexes(array, str){
+function code(arrays, textIndexes) {
     let result = [];
-    for(let i = 0; i < str.length; i++){
-        result.push(array[i])
+    for (let i = 0; i < textIndexes.length; i++){
+        result.push(arrays[i][textIndexes[i]]);
     }
     return result;
 }
@@ -95,7 +93,7 @@ function spaceIndexesReturner(str){
     return spaces;
 }
 
-let spaceIndexes = spaceIndexesReturner(text);
+let spaceIndexes = spaceIndexesReturner(initialText);
 
 function spaceAdder(spaceIndexes, arr){
     for (let i = 0; i < spaceIndexes.length; i++){
@@ -104,5 +102,11 @@ function spaceAdder(spaceIndexes, arr){
     return arr.join('');
 }
 
-console.log(text)
-console.log(spaceAdder(spaceIndexes, decode(arrs, word).split("")));
+let result = code(arrs, indexReturner(initialText)).join('');
+console.log('Initial text:', initialText);
+console.log('Encoded text:', spaceAdder(spaceIndexes, result.split('')));
+console.log('Code word:', codeWord); 
+
+console.log('Initial text:', initialText);
+console.log('Decoded text:', spaceAdder(spaceIndexes, decode(arrs, word).split("")));
+console.log('Code word:', codeWord); 
