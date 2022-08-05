@@ -5,9 +5,6 @@ const {codeWord} = require ('./input.js');
 
 const {initialText} = require ('./input.js');
 
-// const codeWord = 'OBUNGA';
-// const initialText = 'KRETOV OLEXANDER VALENTYNOVYCH';
-
 const word = initialText.split(" ").join('');
 
 const stretchedCodeWord = codeWord.padEnd(initialText.length, codeWord)
