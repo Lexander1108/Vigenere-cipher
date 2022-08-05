@@ -1,9 +1,13 @@
 const english = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const alphabet = english.split("");
 
-const codeWord = 'BICYCLE';
+const {codeWord} = require ('./input.js');
 
-const initialText = 'LZGRQG SMMZYPOIS DCJGYXZVQTANL';
+const {initialText} = require ('./input.js');
+
+// const codeWord = 'OBUNGA';
+// const initialText = 'KRETOV OLEXANDER VALENTYNOVYCH';
+
 const word = initialText.split(" ").join('');
 
 const stretchedCodeWord = codeWord.padEnd(initialText.length, codeWord)
@@ -102,11 +106,10 @@ function spaceAdder(spaceIndexes, arr){
     return arr.join('');
 }
 
-let result = code(arrs, indexReturner(initialText)).join('');
-console.log('Initial text:', initialText);
-console.log('Encoded text:', spaceAdder(spaceIndexes, result.split('')));
-console.log('Code word:', codeWord); 
+let codedResult = code(arrs, indexReturner(initialText)).join('');
 
-console.log('Initial text:', initialText);
-console.log('Decoded text:', spaceAdder(spaceIndexes, decode(arrs, word).split("")));
-console.log('Code word:', codeWord); 
+const encodedText = spaceAdder(spaceIndexes, codedResult.split(''));
+
+const decodedText = spaceAdder(spaceIndexes, decode(arrs, word).split(""));
+
+module.exports = {encodedText, decodedText}
