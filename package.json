@@ -2,9 +2,10 @@
   "name": "vigenere-cipher",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "bot.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "bot": "nodemon bot.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,7 @@
   },
   "homepage": "https://github.com/Lexander1108/Vigenere-cipher#readme",
   "dependencies": {
+    "@grammyjs/conversations": "^1.0.2",
     "dotenv": "^16.0.1",
     "eslint": "^8.21.0",
     "grammy": "^1.10.1",
